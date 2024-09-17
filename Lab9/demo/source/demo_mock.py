@@ -6,14 +6,14 @@ def is_today_even(today_date):
     # Extract the day of the month
     day_of_month = today_date.day
 
-    # Check if the day is odd
+    # Check if the day is even
     if day_of_month % 2 == 0:
         return True
     else:
         return False
 
 
-# save an odd date
+# save an odd date for test
 odd_date = datetime(year=2024, month=8, day=19)
 
 datetime = Mock()

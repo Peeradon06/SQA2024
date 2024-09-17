@@ -9,12 +9,13 @@ def get_mock_country_api_response():
     mock_api_response = Response()
     mock_api_response.status_code = 200
 
-    mock_api_response.raw = BytesIO(b'{ "data" : ["Thailand", "England", "Taiwan", '
-                                    b'"Tunisia", "Indonesia", "America", "Japan"]}')
+    # mock_api_response.raw = BytesIO(b'{ "data" : ["Thailand", "England", "Taiwan", '
+    #                                 b'"Tunisia", "Indonesia", "America", "Japan"]}')
+    mock_api_response.raw = BytesIO(b'{ "base":"THB", "result":{"KRW":38.69} }')
 
     return mock_api_response
 
 
-# example = get_mock_country_api_response().json()
-# print(type(example), example)
+example = get_mock_country_api_response().json()
+print(example)
 

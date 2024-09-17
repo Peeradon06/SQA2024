@@ -1,6 +1,5 @@
 import requests
 from datetime import datetime
-from unittest.mock import Mock
 
 
 class CurrencyExchanger:
@@ -22,6 +21,10 @@ class CurrencyExchanger:
             self.api_response = None
 
     def currency_exchange(self, amount):
+        # get rate from api
         self.get_currency_rate()
-        # Implement function to calculate the currency from base currency to the target currency
-        return amount
+
+        target_rate = self.api_response["result"][self.target_currency]
+        target_amount = amount * target_rate
+
+        return target_amount

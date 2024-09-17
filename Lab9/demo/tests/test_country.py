@@ -36,6 +36,7 @@ class TestCountry(unittest.TestCase):
     def test_get_country_name_start_with_letter(self, mock_request):
         mock_request.get.return_value = self.mock_api_response
 
+        # Act - execute the function to test
         result = self.country.get_country_name_start_with_letter("t")
 
         mock_request.get.assert_called_once()
